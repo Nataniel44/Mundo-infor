@@ -1,7 +1,7 @@
 import "./App.css";
 
 import Navbar from "./components/Navbar";
-import Main from "./components/Main";
+
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 
@@ -14,7 +14,7 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/MUNDO-INFORMATICA" element={<Main />} />
+
         <Route path="/choose-username" element={<ChoseUserName />} />
 
         <Route path="/curso/:id" />
