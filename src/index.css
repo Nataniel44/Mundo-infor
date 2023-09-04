@@ -1,0 +1,48 @@
+/* TuArchivoDeEstilos.css o en tu archivo de estilos de Bootstrap */
+.curso-item {
+  transition: transform 0.2s ease-in-out; /* Animación suave al pasar el mouse */
+
+  /* Personaliza más el estilo aquí según tus preferencias */
+}
+.fondo {
+  background-image: url(" ../img/fondo1.jpg ");
+  background-size: cover;
+}
+.text-logo {
+  font-family: "Phudu", cursive;
+}
+body {
+  background: #222;
+}
+.shad {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.422); /* Sombra suave */
+}
+.logo {
+  font-family: "Passion One", cursive;
+}
+
+.first-color {
+  background: #d5def5;
+}
+.text-color-second {
+  color: #95b0f5;
+}
+.text-color {
+  color: #6643b5;
+}
+.second-color {
+  background-color: #6643b5;
+}
+.vh-50 {
+  height: 50vh;
+}
+.text {
+  font-family: "Bebas Neue", sans-serif;
+}
+/* Cambiar el estilo al pasar el mouse */
+.curso-item:hover {
+  transform: scale(
+    1.05
+  ); /* Hace que el elemento sea ligeramente más grande al pasar el mouse */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra al pasar el mouse */
+}
