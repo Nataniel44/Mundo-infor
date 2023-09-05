@@ -55,7 +55,7 @@ export default function Main() {
                   src={curso.imageURL}
                   className="card-img-top border-0"
                   alt={curso.title}
-                  width="50"
+                  width="40"
                 />
                 <div className="card-body second-color">
                   <h5 className="card-title">{curso.title}</h5>
