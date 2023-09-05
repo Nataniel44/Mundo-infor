@@ -28,14 +28,14 @@ export default function Main() {
     {
       id: 4,
       title: "Técnico auxiliar en dictado de clases",
-      imageURL: "src/components/img/tecaudic.png",
+      imageURL: "./components/img/tecaudic.png",
       description:
         "Una tecnicatura pensada para aquellas personas que deseen desempeñarse dentro del área de la enseñanza. Puedes enseñar tanto en escuelas (presentando un proyecto), colegios como también en institutos privados, o bien abrir tu propia academia. Una excelente alternativa para poder ser tu propio jefe.",
     },
     {
       id: 5,
       title: "Técnico avanzado en Office",
-      imageURL: "src/components/img/tecavanoff.png",
+      imageURL: "/components/img/tecavanoff.png",
       description:
         "Lo más completo, ya que cuenta con todos los programas de Office y eso hace que se abra una gran ventana de oportunidades laborales, ya sea en corralones, farmacias, supermercados, estaciones de servicios y/o cooperativas. Importante certificación para aquellos que buscan desempeñarse también en las fuerzas (Policía, Gendarmería, Prefectura, etc.)",
     },
