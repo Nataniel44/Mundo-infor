@@ -44,7 +44,7 @@ export default function Main() {
   return (
     <>
       <Home />
-      <img src="../img/tecavanoff.png" alt="" />
+      <img src="../img/tecavanoff.png" alt="123" />
       <div className="container mt-5 text-logo">
         <h3 className="text-light text-center display-5">Nuestros Cursos</h3>
         <div className="row justify-content-center">
