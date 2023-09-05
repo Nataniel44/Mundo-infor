@@ -5,8 +5,4 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   plugins: [react()],
   base: "/Mundo-infor/",
-  esbuild: {
-    jsxFactory: "React.createElement",
-    jsxFragment: "React.Fragment",
-  },
 });
