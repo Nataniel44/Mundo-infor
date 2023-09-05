@@ -5,7 +5,7 @@
   /* Personaliza más el estilo aquí según tus preferencias */
 }
 .fondo {
-  background-image: url(" ../img/fondo1.jpg ");
+  background-image: url(" ./img/fondo1.jpg ");
   background-size: cover;
 }
 .text-logo {
@@ -34,7 +34,7 @@ body {
   background-color: #6643b5;
 }
 .vh-auto{
-  
+
 }
 .vh-50 {
   height: 50vh;
