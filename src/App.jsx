@@ -42,7 +42,7 @@ function App() {
     {
       id: 5,
       title: "Técnico avanzado en Office",
-      imageURL: "../img/tecavanoff.png",
+      imageURL: "./img/tecavanoff.png",
       description:
         "Lo más completo, ya que cuenta con todos los programas de Office y eso hace que se abra una gran ventana de oportunidades laborales, ya sea en corralones, farmacias, supermercados, estaciones de servicios y/o cooperativas. Importante certificación para aquellos que buscan desempeñarse también en las fuerzas (Policía, Gendarmería, Prefectura, etc.)",
     },
