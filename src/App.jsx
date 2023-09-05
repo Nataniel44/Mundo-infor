@@ -5,7 +5,7 @@ import Main from "./components/Main";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import CursosDetalle from "./components/CursosDetalle";
-import cursosData from "/src/DATA/cursosData.json"; // Importa los datos desde el archivo JSON
+import cursosData from "./src/DATA/cursosData.json"; // Importa los datos desde el archivo JSON
 import Registerform from "./components/Registerform";
 
 import ChoseUserName from "./rutas/ChoseUserName";
