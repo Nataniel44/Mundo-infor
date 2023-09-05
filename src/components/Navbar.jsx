@@ -11,6 +11,12 @@ const Navbar = () => {
               width="50"
               alt=""
             />
+            <img
+              src="./img/tecnicoAd.png"
+              className="rounded-circle"
+              width="50"
+              alt=""
+            />
           </a>
           <button
             className="navbar-toggler"
