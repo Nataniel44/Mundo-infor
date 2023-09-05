@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Main() {
   const [data, setdata] = useState(null);
 
-  fetch("public/DATA/cursosData.json")
+  fetch("./DATA/cursosData.json")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
