@@ -19,13 +19,13 @@ const CursoDetalle = ({ cursosData }) => {
           <img
             src={curso.imageURL}
             alt={curso.title}
-            className="img-fluid rounded "
+            className="img-fluid rounded border borde-2 border-dark "
           />
         </div>
         <div className="col-md-8 ">
           <h3 className="text text-color display-2">{curso.title}</h3>
           <p className="">{curso.description}</p>
-          <Link to="/home" className="btn btn-dark">
+          <Link to="/Mundo-infor" className="btn btn-dark">
             Ver más cursos
           </Link>
         </div>

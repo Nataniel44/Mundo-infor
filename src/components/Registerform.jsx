@@ -8,6 +8,14 @@ import {
 } from "firebase/auth";
 import { useState } from "react";
 const Registerform = () => {
+  /*
+  0:inicializado
+  1:loanding
+  2:login completo
+  3:login pero sin registro
+  4:no hay nadie logueado
+  5:ya existe username
+  */
   const [state, setCurrentState] = useState(0);
   const navigate = useNavigate();
 
