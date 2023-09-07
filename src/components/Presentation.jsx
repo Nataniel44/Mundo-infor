@@ -2,21 +2,20 @@ const Presentation = () => {
   return (
     <>
       <div>
-        <div className="jumbotron jumbotron-fluid text-center text-logo ">
+        <div className="jumbotron jumbotron-fluid text-center text-logo rounded second-color p-3 mt-3">
           <div className="">
-            <h1 className="display-4">
+            <h3 className="display-5">
               Bienvenido a el <br /> INSTITUTO
               <span className="text-primary"> Mundo Informática</span>
-            </h1>
+            </h3>
             <p className="lead">
               En Mundo Informática, estamos comprometidos con la excelencia en
               la educación informática.
             </p>
-            <p>
-              <a href="#section" className="btn btn-primary">
-                Explora nuestros cursos
-              </a>
-            </p>
+
+            <a href="#section" className="btn btn-primary">
+              Explora nuestros cursos
+            </a>
           </div>
         </div>
 

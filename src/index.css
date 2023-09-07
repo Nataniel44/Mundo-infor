@@ -8,7 +8,6 @@ body {
   margin-top: 76px;
 }
 .fondo {
-  background-image: url(" ./img/fondo1.jpg ");
   background-size: cover;
 }
 .text-logo {
@@ -30,11 +29,17 @@ body {
 .text-color-second {
   color: #95b0f5;
 }
+.color-tarjeta {
+  background-color: #e1c25d;
+}
 .text-color {
   color: #6643b5;
 }
 .second-color {
   background-color: #6643b5;
+}
+.lh-0 {
+  line-height: 70px;
 }
 .vh-auto {
 }
@@ -50,4 +55,53 @@ body {
     1.05
   ); /* Hace que el elemento sea ligeramente más grande al pasar el mouse */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra al pasar el mouse */
+}
+
+/* Estilos para el contenedor principal */
+.header-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3c408e;
+  height: 89vh; /* Ajusta la altura según tus necesidades */
+
+  background-image: radial-gradient(circle, #ffffff 2px, transparent 1px);
+  background-size: 30px 30px; /* Controla la distancia entre los puntos */
+  background-position: 0 0; /* Ajusta la posición inicial */
+}
+
+/* Estilos para el cuadrado horizontal de fondo */
+.background-square {
+  position: absolute;
+  top: 1;
+  left: 10;
+  width: 35%;
+  height: 40%;
+  background-color: #ffffff; /* Color de fondo del cuadrado */
+  z-index: 0; /* Coloca el cuadrado detrás del contenido */
+}
+
+/* Estilos para el contenedor de contenido */
+.content-container {
+  z-index: 1; /* Asegura que el contenido esté sobre el cuadrado */
+  text-align: center; /* Ajusta el contenido al centro */
+}
+
+/* Estilos para hacer el cuadrado cuadrado y responsivo */
+.background-square::before {
+  content: "";
+  padding-bottom: 100%; /* Hace que la altura sea igual al ancho (1:1) */
+  float: left;
+}
+
+/* Estilos adicionales para el cuadrado si es necesario */
+.background-square {
+  /* Agrega estilos adicionales según tus preferencias */
+}
+@media (max-width: 670px) {
+  .background-square {
+    width: 75%;
+    height: 30%;
+  }
 }
