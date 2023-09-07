@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import CursosDetalle from "./components/CursosDetalle";
 
 import Registerform from "./components/Registerform";
-import cursosData from "./components/Main";
+import { cursosData } from "./components/Main";
 
 import ChoseUserName from "./rutas/ChoseUserName";
 import Dashboard from "./rutas/Dashboard";
