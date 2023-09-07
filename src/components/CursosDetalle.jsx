@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-
+import { useEffect } from "react";
 const CursoDetalle = ({ cursosData }) => {
   const { id } = useParams(); // Obtiene el ID de la URL
 
@@ -10,6 +10,10 @@ const CursoDetalle = ({ cursosData }) => {
     // Manejo de caso en el que el curso no se encuentra
     return <div className="bg-light">Curso no encontrado</div>;
   }
+  useEffect(() => {
+    // Restablece la posición de desplazamiento a la parte superior de la página
+    window.scrollTo(0, 0);
+  }, [id]);
 
   return (
     <div className="container first-color mb-3 p-3 rounded ">
