@@ -50,7 +50,7 @@ const db = getFirestore(app);
 export async function userExists(uid) {
   const docRef = doc(db, "users", uid);
   const res = await getDoc(docRef);
-  console.log(res);
+
   return res.exists();
 }
 export async function existsUsername(username) {
@@ -65,9 +65,29 @@ export async function existsUsername(username) {
 }
 export async function registerNewUser(user) {
   try {
-    const docRef = doc(db, "users");
-    const docRef = doc(collectionRef, user.id);
-    await setDoc();
-  } catch (error) {}
+    const collectionRef = collection(db, "users");
+    const docRef = doc(collectionRef, user.uid);
+    await setDoc(docRef, user);
+  } catch (error) {
+    console.log(error);
+  }
+}
+export async function updateUser(user) {
+  try {
+    const collectionRef = collection(db, "users");
+    const docRef = doc(collectionRef, user.uid);
+    await setDoc(docRef, user);
+  } catch (error) {
+    console.log(error);
+  }
+}
+export async function getUserInfo(uid) {
+  try {
+    const docRef = doc(db, "users", uid);
+    const document = await getDoc(docRef);
+    return document.data();
+  } catch (error) {
+    console.log(error);
+  }
 }
 export { db }; // Exporta la instancia de Firestore

@@ -1,6 +1,6 @@
 import { auth, userExists } from "/src/firebase";
 import { useNavigate } from "react-router-dom";
-
+import { registerNewUser, getUserInfo } from "../firebase";
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -23,9 +23,21 @@ const authProvider = ({
         if (user) {
           const isRegistered = await userExists(user.uid);
           if (isRegistered) {
-            onUserLoggedIn(user);
+            const userInfo = await getUserInfo(user.uid);
+
+            if (userInfo.processCompleted) {
+              onUserLoggedIn(userInfo);
+            } else {
+              onUserNotRegistered(userInfo);
+            }
           } else {
-            //TODO: REDIRIGIR A CHOOSE USERNAME
+            await registerNewUser({
+              uid: user.uid,
+              displayName: user.displayName,
+              profilePicture: "",
+              username: "",
+              processCompleted: false,
+            });
             onUserNotRegistered(user);
           }
         }

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import Home from "../components/Home";
 
-const cursosData = [
+export const cursosData = [
   {
     id: 1,
     title: "Técnico Administrativo",

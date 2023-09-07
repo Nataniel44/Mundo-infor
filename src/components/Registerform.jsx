@@ -1,6 +1,7 @@
 import { auth, userExists } from "/src/firebase";
 import { useNavigate } from "react-router-dom";
 import AuthProvider from "/src/components/AuthProvider";
+
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -15,6 +16,7 @@ const Registerform = () => {
   3:login pero sin registro
   4:no hay nadie logueado
   5:ya existe username
+  6:nuevo username click para continuar 
   */
   const [state, setCurrentState] = useState(0);
   const navigate = useNavigate();
@@ -33,7 +35,7 @@ const Registerform = () => {
     }
   }
   function handleUserLoggedIn(user) {
-    navigate("/choose-username");
+    navigate("/Mundo-Infor");
   }
   function handleUserNotRegistered(user) {
     navigate("/choose-username");
@@ -42,14 +44,6 @@ const Registerform = () => {
     setCurrentState(4);
   }
 
-  if (state === 2) {
-    return <div className="text-light">Estas aunteticado y registrado</div>;
-  }
-  if (state === 3) {
-    return (
-      <div className="text-light">Estas aunteticado pero no registrado</div>
-    );
-  }
   if (state === 4) {
     return (
       <div className="text-light">
@@ -65,7 +59,9 @@ const Registerform = () => {
       onUserNotRegistered={handleUserNotRegistered}
       onUserNotLoggedIn={handleUserNotLoggedIn}
     >
-      <div className="text-light">Loading...</div>
+      <div className="vh-50">
+        <div className="text-light">Loading...</div>
+      </div>
     </AuthProvider>
   );
 };
