@@ -24,6 +24,12 @@ const Header = () => {
                   <p className="m-0 text ">
                     &#x2705;Becas y descuentos <br /> exclusivos.
                   </p>
+                  <a
+                    href={"#section"}
+                    className="btn btn-dark border-1 border-light mt-2 ms-4 me-4"
+                  >
+                    Explora nuestros cursos
+                  </a>
                 </div>
               </div>
             </div>
