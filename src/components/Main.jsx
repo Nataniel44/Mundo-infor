@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Home from "../components/Home";
 
 export const cursosData = [
+<<<<<<< HEAD
   {
     id: 1,
     title: "Técnico superior",
@@ -10,6 +11,8 @@ export const cursosData = [
     description:
       "Lo más completo, ya que cuenta con todos los programas de Office y eso hace que se abra una gran ventana de oportunidades laborales, ya sea en corralones, farmacias, supermercados, estaciones de servicios y/o cooperativas. Importante certificación para aquellos que buscan desempeñarse también en las fuerzas (Policía, Gendarmería, Prefectura, etc.)",
   },
+=======
+>>>>>>> parent of ce0ad55 (3)
   {
     id: 1,
     title: "Técnico Administrativo",
@@ -41,6 +44,7 @@ export const cursosData = [
   {
     id: 5,
     title: "Técnico avanzado en Office",
+<<<<<<< HEAD
     imageURL: "./img/img1/tec-avan.jpeg",
     description:
       "Lo más completo, ya que cuenta con todos los programas de Office y eso hace que se abra una gran ventana de oportunidades laborales, ya sea en corralones, farmacias, supermercados, estaciones de servicios y/o cooperativas. Importante certificación para aquellos que buscan desempeñarse también en las fuerzas (Policía, Gendarmería, Prefectura, etc.)",
@@ -72,6 +76,9 @@ export const cursosData = [
     id: 10,
     title: "Administrativo contable",
     imageURL: "./img/img1/adm-cont.jpeg",
+=======
+    imageURL: "./img/tecavanoff.png",
+>>>>>>> parent of ce0ad55 (3)
     description:
       "Lo más completo, ya que cuenta con todos los programas de Office y eso hace que se abra una gran ventana de oportunidades laborales, ya sea en corralones, farmacias, supermercados, estaciones de servicios y/o cooperativas. Importante certificación para aquellos que buscan desempeñarse también en las fuerzas (Policía, Gendarmería, Prefectura, etc.)",
   },

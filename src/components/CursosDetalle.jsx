@@ -17,6 +17,7 @@ const CursoDetalle = ({ cursosData }) => {
   
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className="container p-3 rounded bg-light ">
       <div>
         <h2 className=" text-center text display-5 ">Detalles del Curso</h2>
@@ -36,6 +37,8 @@ const CursoDetalle = ({ cursosData }) => {
             </Link>
           </div>
 =======
+=======
+>>>>>>> parent of ce0ad55 (3)
     <div className="container first-color mb-3 p-3 rounded " id="section">
       <h2 className=" text-center text display-5 ">Detalles del Curso</h2>
       <div className="row align-items-center">
@@ -52,6 +55,9 @@ const CursoDetalle = ({ cursosData }) => {
           <Link to="/Mundo-infor" className="btn btn-dark">
             Ver más cursos
           </Link>
+<<<<<<< HEAD
+>>>>>>> parent of ce0ad55 (3)
+=======
 >>>>>>> parent of ce0ad55 (3)
         </div>
       </div>
