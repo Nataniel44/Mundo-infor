@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Home from "../components/Home";
 
 export const cursosData = [
-    {
+  {
     id: 1,
     title: "Técnico superior",
     imageURL: "./img/img1/tec-sup.jpeg",
@@ -78,8 +78,6 @@ export const cursosData = [
 ];
 
 export default function Main() {
-
-
   return (
     <>
       <Home />
@@ -104,7 +102,6 @@ export default function Main() {
             </div>
           ))}
         </div>
-        
       </div>
     </>
   );

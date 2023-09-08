@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -38,7 +38,7 @@ const Navbar = () => {
           >
             <div className="navbar-nav text-logo">
               <Link
-                to="/Mundo-infor"
+                to="/"
                 className="nav-link active"
                 onClick={toggleNavbar} // Cierra el navbar al hacer clic en el enlace
               >
