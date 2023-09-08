@@ -46,16 +46,10 @@ const Registerform = () => {
 
   if (state === 4) {
     return (
-      <div className=" text-light vh-50 d-flex flex-column css-selector justify-content-center align-items-center">
-        <div className=" d-flex bg-dark border-1 border rounded flex-column p-3 align-items-center">
-         <h2>Authentification</h2>
+      <div className="text-light">
         <button onClick={handleOnClick} className="btn btn-primary">
-          Log In With Google
-
-          <img src="/public/img/google.png" className="m-1" width={"20px"} alt="123" />
-
+          Log In
         </button>
-        </div>
       </div>
     );
   }
