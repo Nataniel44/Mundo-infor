@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/Mundo-Infor" element={<Main />} />
         <Route path="/choose-username" element={<ChoseUserName />} />
-
+        
         <Route
           path="/curso/:id"
           element={<CursosDetalle cursosData={cursosData} />}

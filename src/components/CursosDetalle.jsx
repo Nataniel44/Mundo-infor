@@ -16,22 +16,24 @@ const CursoDetalle = ({ cursosData }) => {
   }, [id]);
 
   return (
-    <div className="container first-color mb-3 p-3 rounded " id="section">
-      <h2 className=" text-center text display-5 ">Detalles del Curso</h2>
-      <div className="row align-items-center">
-        <div className="col-md-4">
-          <img
-            src={curso.imageURL}
-            alt={curso.title}
-            className="img-fluid rounded border borde-2 border-dark mb-2 "
-          />
-        </div>
-        <div className="col-md-8 ">
-          <h3 className="text text-color display-2">{curso.title}</h3>
-          <p className="">{curso.description}</p>
-          <Link to="/Mundo-infor" className="btn btn-dark">
-            Ver más cursos
-          </Link>
+    <div className="container p-3 rounded bg-light ">
+      <div>
+        <h2 className=" text-center text display-5 ">Detalles del Curso</h2>
+        <div className="row align-items-center justify-content-center">
+          <div className="col-md-4 col-6">
+            <img
+              src={curso.imageURL}
+              alt={curso.title}
+              className="img-fluid rounded border borde-2 border-dark mb-2 "
+            />
+          </div>
+          <div className="col-md-8 ">
+            <h3 className="text text-color display-4">{curso.title}</h3>
+            <p className="">{curso.description}</p>
+            <Link to="/Mundo-infor" className="btn btn-dark">
+              Ver más cursos
+            </Link>
+          </div>
         </div>
       </div>
     </div>
