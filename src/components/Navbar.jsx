@@ -38,7 +38,7 @@ const Navbar = () => {
           >
             <div className="navbar-nav text-logo">
               <Link
-                to="/"
+                to="/Mundo-infor"
                 className="nav-link active"
                 onClick={toggleNavbar} // Cierra el navbar al hacer clic en el enlace
               >

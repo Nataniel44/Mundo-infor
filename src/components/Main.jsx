@@ -69,7 +69,7 @@ export const cursosData = [
   },
 
   {
-    id: 9,
+    id: 10,
     title: "Administrativo contable",
     imageURL: "./img/img1/adm-cont.jpeg",
     description:

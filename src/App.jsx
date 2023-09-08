@@ -17,7 +17,7 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/Mundo-infor" element={<Main />} />
         <Route path="/choose-username" element={<ChoseUserName />} />
 
         <Route
