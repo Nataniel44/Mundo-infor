@@ -1,8 +1,16 @@
+import { useRef } from 'react';
+import RegistroForm from "./RegistroForm";
 const Presentation = () => {
+ const compraSectionRef = useRef(null); // Referencia a la sección de compra
+
+  // Función para manejar el clic en la flecha y llevar al usuario a la sección de compra
+  const handleArrowClick = () => {
+    compraSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <>
       <div>
-        <div className="jumbotron jumbotron-fluid text-center text-logo rounded second-color p-3 mt-3 mb-3">
+        <div className="jumbotron jumbotron-fluid text-center text-logo rounded p-3 mt-3 mb-3">
           <div className="">
             <h3 className="display-5">
               Bienvenido a el <br /> INSTITUTO
@@ -13,12 +21,12 @@ const Presentation = () => {
               la educación informática.
             </p>
 
-            <a href={"#section"} className="btn btn-primary">
+            <button onClick={handleArrowClick} className="btn btn-primary">
               Explora nuestros cursos
-            </a>
+            </button>
           </div>
         </div>
-
+        <RegistroForm />
         <div className=" ">
           <h2 className="text-color">Nuestra Misión</h2>
           <p>
@@ -76,8 +84,12 @@ const Presentation = () => {
             No esperes más, ¡inscríbete en Mundo Informática y lleva tu
             conocimiento informático al siguiente nivel!
           </p>
+          <div className='h-25 text-dark' ref={compraSectionRef}>
+          <p>1</p>
+          </div>
         </div>
       </div>
+     
     </>
   );
 };

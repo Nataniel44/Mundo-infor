@@ -1,5 +1,5 @@
 import Header from "./Header";
-import RegistroForm from "./RegistroForm";
+
 import Presentation from "./Presentation";
 function Home() {
   return (
@@ -7,7 +7,7 @@ function Home() {
       <Header />
       <div className="container text-light">
         <Presentation />
-        <RegistroForm />
+
       </div>
     </>
   );
