@@ -2,7 +2,7 @@ const Presentation = () => {
   return (
     <>
       <div>
-        <div className="jumbotron jumbotron-fluid text-center text-logo rounded second-color p-3 mt-3">
+        <div className="jumbotron jumbotron-fluid text-center text-logo rounded second-color p-3 mt-3 mb-3">
           <div className="">
             <h3 className="display-5">
               Bienvenido a el <br /> INSTITUTO
@@ -13,13 +13,13 @@ const Presentation = () => {
               la educación informática.
             </p>
 
-            <a href="#section" className="btn btn-primary">
+            <a href={"#section"} className="btn btn-primary">
               Explora nuestros cursos
             </a>
           </div>
         </div>
 
-        <div className="">
+        <div className=" ">
           <h2 className="text-color">Nuestra Misión</h2>
           <p>
             Nuestra misión es simple pero poderosa: transformar vidas a través

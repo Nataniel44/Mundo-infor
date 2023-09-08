@@ -24,6 +24,7 @@ function App() {
           path="/curso/:id"
           element={<CursosDetalle cursosData={cursosData} />}
         />
+
         <Route path="/login" element={<Registerform />} />
         <Route path="/dashBoard" element={<Dashboard />} />
       </Routes>

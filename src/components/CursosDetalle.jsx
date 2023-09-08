@@ -16,14 +16,14 @@ const CursoDetalle = ({ cursosData }) => {
   }, [id]);
 
   return (
-    <div className="container first-color mb-3 p-3 rounded ">
+    <div className="container first-color mb-3 p-3 rounded " id="section">
       <h2 className=" text-center text display-5 ">Detalles del Curso</h2>
       <div className="row align-items-center">
         <div className="col-md-4">
           <img
             src={curso.imageURL}
             alt={curso.title}
-            className="img-fluid rounded border borde-2 border-dark "
+            className="img-fluid rounded border borde-2 border-dark mb-2 "
           />
         </div>
         <div className="col-md-8 ">
