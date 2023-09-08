@@ -12,8 +12,8 @@ const Header = () => {
                   ESTUDIA <br /> Y CRECE
                 </h2>
                 <div className="bg-dark rounded ps-3 pe-3 text-light">
-                  <p className="fs-5 text">
-                    Con los cursos del <span className="text-color">IMI</span>
+                  <p className="fs-5 ">
+                    con los cursos del <span className="text-color">imi</span>
                   </p>
                 </div>
                 <div className="mt-3 d-flex flex-column ">

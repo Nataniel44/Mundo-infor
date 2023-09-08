@@ -41,12 +41,13 @@ body {
 .lh-0 {
   line-height: 70px;
 }
-
+.vh-auto {
+}
 .vh-50 {
   height: 52vh;
 }
 .text {
-  font-family: "Inter", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
 }
 /* Cambiar el estilo al pasar el mouse */
 .curso-item:hover {
@@ -105,6 +106,7 @@ body {
   }
 }
 
+
 .css-selector {
   background: linear-gradient(270deg, #989898, #292f39);
   background-size: 400% 400%;
@@ -114,46 +116,22 @@ body {
   animation: AnimationName 30s ease infinite;
 }
 @-webkit-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 @-moz-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 @-o-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 @keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
