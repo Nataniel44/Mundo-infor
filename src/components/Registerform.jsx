@@ -1,25 +1,43 @@
-import { auth, userExists } from "/src/firebase";
-import { useNavigate } from "react-router-dom";
+import { auth, userExists, getUserInfo } from "/src/firebase"; // Importa la función getUserInfo
+import { useNavigate, Link } from "react-router-dom";
 import AuthProvider from "/src/components/AuthProvider";
-
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
 } from "firebase/auth";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 const Registerform = () => {
-  /*
-  0:inicializado
-  1:loanding
-  2:login completo
-  3:login pero sin registro
-  4:no hay nadie logueado
-  5:ya existe username
-  6:nuevo username click para continuar 
-  */
   const [state, setCurrentState] = useState(0);
+  const [isAdmin, setIsAdmin] = useState(false); // Agrega el estado para determinar si el usuario es administrador
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // Obtiene información del usuario y verifica si es administrador
+        const userInfo = await getUserInfo(user.uid);
+        if (userInfo && userInfo.isAdmin) {
+          setIsAdmin(true);
+        }
+        checkUserRegistration(user.uid);
+      } else {
+        setCurrentState(4);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  async function checkUserRegistration(uid) {
+    const isRegistered = await userExists(uid);
+    if (isRegistered) {
+      setCurrentState(2);
+    } else {
+      setCurrentState(3);
+    }
+  }
 
   async function handleOnClick() {
     const googleProvider = new GoogleAuthProvider();
@@ -34,25 +52,19 @@ const Registerform = () => {
       console.error(error);
     }
   }
+
   function handleUserLoggedIn(user) {
-    navigate("/Mundo-Infor");
+    navigate("/Mundo-infor/dashboard");
   }
+
   function handleUserNotRegistered(user) {
-    navigate("/choose-username");
+    navigate("/Mundo-infor/choose-username");
   }
+
   function handleUserNotLoggedIn() {
     setCurrentState(4);
   }
 
-  if (state === 4) {
-    return (
-      <div className="text-light">
-        <button onClick={handleOnClick} className="btn btn-primary">
-          Log In
-        </button>
-      </div>
-    );
-  }
   return (
     <AuthProvider
       onUserLoggedIn={handleUserLoggedIn}
@@ -60,7 +72,18 @@ const Registerform = () => {
       onUserNotLoggedIn={handleUserNotLoggedIn}
     >
       <div className="vh-50">
-        <div className="text-light">Loading...</div>
+        {isAdmin && ( // Muestra el enlace "Admin" solo si el usuario es administrador
+          <Link to="/dashboard">Admin</Link>
+        )}
+        {state === 4 ? (
+          <div className="text-light">
+            <button onClick={handleOnClick} className="btn btn-primary">
+              Log In
+            </button>
+          </div>
+        ) : (
+          <div className="text-light vh-100">Loading...</div>
+        )}
       </div>
     </AuthProvider>
   );

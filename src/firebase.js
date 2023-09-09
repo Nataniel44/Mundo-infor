@@ -81,6 +81,17 @@ export async function updateUser(user) {
     console.log(error);
   }
 }
+export async function getAdminInfo(uid) {
+  try {
+    const docRef = doc(db, "users", uid);
+    const document = await getDoc(docRef);
+    const userInfo = document.data();
+    return userInfo;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function getUserInfo(uid) {
   try {
     const docRef = doc(db, "users", uid);
@@ -91,3 +102,29 @@ export async function getUserInfo(uid) {
   }
 }
 export { db }; // Exporta la instancia de Firestore
+export async function insertNewLink(link) {
+  try {
+    const docRef = collection(db, "link");
+    const res = await addDoc(docRef, link);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+}
+export async function getLinks(uid) {
+  const links = [];
+  try {
+    const collectionRef = collection(db, "link");
+    const q = query(collectionRef, where("uid", "==", uid));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      const link = { ...doc.data() };
+      link.docId = doc.id;
+      links.push(link);
+    });
+
+    return links;
+  } catch (error) {
+    console.log(error);
+  }
+}

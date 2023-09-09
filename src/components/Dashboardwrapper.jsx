@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const Navbar = () => {
+const Dashboardwrapper = ({ children, admin }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   const toggleNavbar = () => {
@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <>
+    <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container-fluid">
           <a className="navbar-brand text" href="#">
@@ -37,33 +37,28 @@ const Navbar = () => {
             id="navbarNavAltMarkup"
           >
             <div className="navbar-nav text-logo">
+              {/* Solo muestra el enlace de administrador si isAdmin es true */}
+              {admin && (
+                <Link to={"/Mundo-infor/dashBoard"} className="nav-link active">
+                  Prospectos
+                </Link>
+              )}
               <Link
-                to="/Mundo-infor"
+                to={"/Mundo-infor/dashBoard/profile"}
                 className="nav-link active"
-                onClick={toggleNavbar} // Cierra el navbar al hacer clic en el enlace
               >
-                Inicio
+                Profile
               </Link>
-
-              <a className="nav-link active" href="#">
-                Cursos
-              </a>
-              <a className="nav-link active" href="#">
-                ¡Quiero inscribirme!
-              </a>
-              <Link
-                to="/Mundo-infor/login"
-                className="nav-link active text-primary"
-                onClick={toggleNavbar} // Cierra el navbar al hacer clic en el enlace
-              >
-                Log In
+              <Link to={"/Singout"} className="nav-link active">
+                SingOut
               </Link>
             </div>
           </div>
         </div>
       </nav>
-    </>
+      <div>{children}</div>
+    </div>
   );
 };
 
-export default Navbar;
+export default Dashboardwrapper;

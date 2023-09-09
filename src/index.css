@@ -16,6 +16,9 @@ body {
 body {
   background: #222;
 }
+.bg-darkmode {
+  background-color: #222;
+}
 .shad {
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.422); /* Sombra suave */
 }
@@ -42,6 +45,9 @@ body {
   line-height: 70px;
 }
 .vh-auto {
+}
+.color-form {
+  color: #778ca3;
 }
 .vh-50 {
   height: 52vh;
@@ -99,13 +105,12 @@ body {
 .background-square {
   /* Agrega estilos adicionales según tus preferencias */
 }
-@media (max-width: 670px) {
+@media (max-width: 720px) {
   .background-square {
     width: 75%;
     height: 30%;
   }
 }
-
 
 .css-selector {
   background: linear-gradient(270deg, #989898, #292f39);
@@ -116,22 +121,72 @@ body {
   animation: AnimationName 30s ease infinite;
 }
 @-webkit-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-o-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.nav-f {
+  height: 76px;
+}
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrow-container {
+  position: absolute;
+  top: 90%;
+}
+.larger-arrow-icon {
+  fill: #000000; /* Color de la flecha */
+
+  animation: jump 1s infinite alternate; /* Aplica la animación 'jump' */
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0); /* Posición inicial */
+  }
+  100% {
+    transform: translateY(-10px); /* Posición cuando salta */
+  }
 }

@@ -16,36 +16,41 @@ const authProvider = ({
   onUserNotRegistered,
 }) => {
   const navigate = useNavigate();
+  const [isAdmin, setIsAdmin] = useState(false); // Agrega un estado para el rol de administrador
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
-        if (user) {
-          const isRegistered = await userExists(user.uid);
-          if (isRegistered) {
-            const userInfo = await getUserInfo(user.uid);
+        const isRegistered = await userExists(user.uid);
+        if (isRegistered) {
+          const userInfo = await getUserInfo(user.uid);
 
-            if (userInfo.processCompleted) {
-              onUserLoggedIn(userInfo);
-            } else {
-              onUserNotRegistered(userInfo);
+          if (userInfo.processCompleted) {
+            // Verifica si el usuario es un administrador
+            if (userInfo.isAdmin) {
+              setIsAdmin(true);
             }
+            onUserLoggedIn(userInfo);
           } else {
-            await registerNewUser({
-              uid: user.uid,
-              displayName: user.displayName,
-              profilePicture: "",
-              username: "",
-              processCompleted: false,
-            });
-            onUserNotRegistered(user);
+            onUserNotRegistered(userInfo);
           }
+        } else {
+          await registerNewUser({
+            uid: user.uid,
+            displayName: user.displayName,
+
+            profilePicture: "",
+            username: "",
+            processCompleted: false,
+          });
+          onUserNotRegistered(user);
         }
       } else {
         onUserNotLoggedIn();
       }
     });
   }, [navigate, onUserLoggedIn, onUserNotLoggedIn, onUserNotRegistered]);
+
   return <div>{children}</div>;
 };
 

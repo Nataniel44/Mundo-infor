@@ -1,11 +1,11 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 import RegistroForm from "./RegistroForm";
 const Presentation = () => {
- const compraSectionRef = useRef(null); // Referencia a la sección de compra
+  const compraSectionRef = useRef(null); // Referencia a la sección de compra
 
   // Función para manejar el clic en la flecha y llevar al usuario a la sección de compra
   const handleArrowClick = () => {
-    compraSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    compraSectionRef.current.scrollIntoView({ behavior: "smooth" });
   };
   return (
     <>
@@ -26,7 +26,11 @@ const Presentation = () => {
             </button>
           </div>
         </div>
-        <RegistroForm />
+        <div className="d-flex justify-content-center">
+          <div className="col-12 col-lg-6 justify-content-center">
+            <RegistroForm />
+          </div>
+        </div>
         <div className=" ">
           <h2 className="text-color">Nuestra Misión</h2>
           <p>
@@ -84,12 +88,11 @@ const Presentation = () => {
             No esperes más, ¡inscríbete en Mundo Informática y lleva tu
             conocimiento informático al siguiente nivel!
           </p>
-          <div className='h-25 text-dark' ref={compraSectionRef}>
-          <p>1</p>
+          <div className="h-25 text-dark" ref={compraSectionRef}>
+            <p>1</p>
           </div>
         </div>
       </div>
-     
     </>
   );
 };

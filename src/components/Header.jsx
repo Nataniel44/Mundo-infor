@@ -2,7 +2,6 @@ const Header = () => {
   return (
     <div className="header-container">
       <div className="background-square rounded shadow "></div>
-      {/* Cuadrado horizontal de fondo */}
       <div className="content-container">
         <div className="text-center text-color text-logo d-flex justify-content-center">
           <div className="p-3 d-flex align-items-center">

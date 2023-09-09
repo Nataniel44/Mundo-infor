@@ -9,14 +9,14 @@ const ChoseUserName = () => {
   const [currentUser, setCurrentUser] = useState({});
   const [username, setUsername] = useState("");
   function handleUserLoggedIn(user) {
-    navigate("/dashBoard");
+    navigate("/Mundo-infor/dashBoard");
   }
   function handleUserNotRegistered(user) {
     setCurrentUser(user);
     setState(3);
   }
   function handleUserNotLoggedIn() {
-    navigate("/login");
+    navigate("/Mundo-infor/login");
   }
   async function handleContinue() {
     if (username !== "") {
@@ -79,7 +79,7 @@ const ChoseUserName = () => {
         onUserNotRegistered={handleUserNotRegistered}
         onUserNotLoggedIn={handleUserNotLoggedIn}
       >
-        <div className="text-light">Loading...</div>
+        <div className="text-light bg-light">Loading...</div>
       </AuthProvider>
     </>
   );
