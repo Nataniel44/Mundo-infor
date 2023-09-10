@@ -68,7 +68,7 @@ const ChoseUserName = () => {
     return (
       <div>
         <h1>fleicidades ya tienes</h1>
-        <Link to="/dashboard">continuar</Link>
+        <Link to="/Mundo-infor/profile">continuar</Link>
       </div>
     );
   }
