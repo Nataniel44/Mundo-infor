@@ -11,6 +11,7 @@ import { cursosData } from "./components/CursosData";
 import ChoseUserName from "./rutas/ChoseUserName";
 import Dashboard from "./rutas/Dashboard";
 import Profile from "./rutas/Profile";
+import EditProfileView from "./rutas/EditProfileView";
 function App() {
   return (
     <>
@@ -29,6 +30,7 @@ function App() {
         <Route path="/Mundo-infor/login" element={<Registerform />} />
         <Route path="/Mundo-infor/dashBoard" element={<Dashboard />} />
         <Route path="/Mundo-infor/profile" element={<Profile />} />
+        <Route path="/Mundo-infor/editProfile" element={<EditProfileView />} />
       </Routes>
       <Footer />
     </>

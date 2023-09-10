@@ -41,10 +41,18 @@ body {
 .second-color {
   background-color: #6643b5;
 }
+.tree-color {
+  color: #2d4bcf;
+}
+.tree-color1 {
+  background-color: #2d4bcf;
+}
 .lh-0 {
   line-height: 70px;
 }
-.vh-auto {
+.fondo2 {
+  background-image: url("/public/img/22.jpg");
+  background-size: cover;
 }
 .color-form {
   color: #778ca3;
@@ -123,6 +131,23 @@ body {
   -o-animation: AnimationName 30s ease infinite;
   animation: AnimationName 30s ease infinite;
 }
+.css-selector1 {
+  background: linear-gradient(-45deg, #ee7752, #b73ce7, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 0% 50%;
@@ -192,4 +217,45 @@ body {
   100% {
     transform: translateY(-10px); /* Posición cuando salta */
   }
+}
+
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilos para el riel de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background: #353535; /* Color de fondo del riel */
+}
+
+/* Estilos para el pulgar (scroll thumb) */
+::-webkit-scrollbar-thumb {
+  background: #2c46ce; /* Color del pulgar */
+  border-radius: 6px; /* Bordes redondeados del pulgar */
+}
+
+/* Estilos para el pulgar al pasar el mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #3145a7; /* Color del pulgar al pasar el mouse */
+}
+
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.filenone {
+  display: none;
 }

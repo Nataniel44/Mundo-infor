@@ -18,6 +18,13 @@ export default function Main() {
     <>
       <Navbar />
 
+      <a href="https://wa.me/3755538503" target="_blank" rel="noreferrer">
+        <div className="whatsapp-icon">
+          <i className="fab fa-whatsapp">
+            <img src="/img/whatsapp.png" width={"35px"} alt="" />
+          </i>
+        </div>
+      </a>
       <Header />
       <div className="arrow">
         <div className="arrow-container">
@@ -26,11 +33,11 @@ export default function Main() {
           </button>
         </div>
       </div>
-      <div className="container text-light">
+      <div className="text-light">
         <Presentation />
       </div>
       <section ref={sectionRef}>
-        <p>12321</p>
+        <br />
       </section>
       <div className="container mt-5 text-logo">
         <h3 className="text-light text-center display-5">Nuestros Cursos</h3>

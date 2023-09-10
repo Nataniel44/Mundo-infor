@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { db } from "/src/firebase"; // Importa la instancia de Firebase que creaste
-import {
-  collection,
-  addDoc,
-
-} from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 const RegistroForm = () => {
   const [formData, setFormData] = useState({
@@ -26,8 +22,8 @@ const RegistroForm = () => {
     e.preventDefault();
     try {
       const collectionRef = collection(db, "usuarios");
-      addDoc(collectionRef, formData)
-      console.log("se realizo")
+      addDoc(collectionRef, formData);
+      console.log("se realizo");
     } catch (error) {
       console.error("Error en el registro", error);
       // Maneja errores de registro aquí
@@ -35,7 +31,7 @@ const RegistroForm = () => {
   };
 
   return (
-    <div className="text-center text-logo d-flex flex-column rounded second-color p-3 mt-3 mb-3">
+    <div className="text-center text-logo d-flex flex-column rounded tree-color1 p-3 border border-dark  ">
       <h2 className="">
         Formulario de{" "}
         <span className="text-color-second"> Pre-Inscripción</span>

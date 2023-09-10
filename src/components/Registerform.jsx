@@ -7,6 +7,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { useState, useEffect } from "react";
+import Navbar from "./Navbar";
 
 const Registerform = () => {
   const [state, setCurrentState] = useState(0);
@@ -76,13 +77,27 @@ const Registerform = () => {
           <Link to="/dashboard">Admin</Link>
         )}
         {state === 4 ? (
-          <div className="text-light">
-            <button onClick={handleOnClick} className="btn btn-primary">
-              Log In
-            </button>
+          <div className="text-light ">
+            <Navbar />
+            <div className="css-selector1 vh-50 d-flex justify-content-center align-items-center">
+              <div className="bg-dark bg-opacity-50 rounded p-4 d-flex justify-content-center align-items-center flex-column">
+                <h1 className="text-light text-logo fs-3">
+                  INGRESE CON SU CUENTA{" "}
+                </h1>
+                <button
+                  onClick={handleOnClick}
+                  className="btn btn btn-outline-primary mt-3 d-flex justify-content-center align-items-center "
+                >
+                  <img src="/img/google.png" width={"25px"} alt="" />
+                  with google
+                </button>
+              </div>
+            </div>
           </div>
         ) : (
-          <div className="text-light vh-100">Loading...</div>
+          <div className="text-light vh-50 text-center text display-5 css-selector d-flex justify-content-center align-items-center">
+            Loading...
+          </div>
         )}
       </div>
     </AuthProvider>

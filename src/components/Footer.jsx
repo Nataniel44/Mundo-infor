@@ -34,8 +34,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center mt-3">
-        &copy; {new Date().getFullYear()} Mundo Informática. Todos los derechos
-        reservados.
+        &copy; {new Date().getFullYear()} Instituto Mundo Informática. Todos los
+        derechos reservados.
       </div>
     </footer>
   );

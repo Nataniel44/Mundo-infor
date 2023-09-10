@@ -128,3 +128,21 @@ export async function getLinks(uid) {
     console.log(error);
   }
 }
+export async function setUserProfilePhoto(uid, file) {
+  try {
+    const imageRef = ref(storage, `img/${uid}`);
+    const resUpload = await uploadBytes(imageRef, file);
+    return resUpload;
+  } catch (error) {
+    console.log(error);
+  }
+}
+export async function getProfilePhotoUrl(profilePicture) {
+  try {
+    const imageRef = ref(storage, profilePicture);
+    const url = await getDownloadURL(imageRef);
+    return url;
+  } catch (error) {
+    console.error(error);
+  }
+}

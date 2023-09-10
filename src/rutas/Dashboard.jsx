@@ -44,7 +44,6 @@ const Dashboard = () => {
         onUserNotRegistered={handleUserNotRegistered}
         onUserNotLoggedIn={handleUserNotLoggedIn}
       >
-        <Navbar />
         <div className="text-light vh-50 text-center text display-5 css-selector d-flex justify-content-center align-items-center">
           Loading...
         </div>
