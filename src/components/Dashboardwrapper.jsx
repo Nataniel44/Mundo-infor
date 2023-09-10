@@ -43,10 +43,7 @@ const Dashboardwrapper = ({ children, admin }) => {
                   Prospectos
                 </Link>
               )}
-              <Link
-                to={"/Mundo-infor/dashBoard/profile"}
-                className="nav-link active"
-              >
+              <Link to={"/Mundo-infor/profile"} className="nav-link active">
                 Profile
               </Link>
               <Link to={"/Singout"} className="nav-link active">

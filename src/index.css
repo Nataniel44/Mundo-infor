@@ -76,6 +76,9 @@ body {
   background-size: 30px 30px; /* Controla la distancia entre los puntos */
   background-position: 0 0; /* Ajusta la posición inicial */
 }
+.fondo1 {
+  background-color: #2b2b2b;
+}
 
 /* Estilos para el cuadrado horizontal de fondo */
 .background-square {

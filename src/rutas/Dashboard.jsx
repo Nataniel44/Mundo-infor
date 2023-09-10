@@ -80,56 +80,60 @@ const Dashboard = () => {
   return (
     <Dashboardwrapper admin={isAdmin}>
       <div className="bg-darkmode text-light p-3">
-        <h1 className="mb-4">Alumno</h1>
-        <form onSubmit={handleOnSubmit}>
-          <div className="mb-3">
-            <label htmlFor="fullName" className="form-label">
-              Nombre Completo
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="fullName"
-              name="fullName"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              required
-            />
+        <h1 className="mb-1 text-center text-logo display-4">PROSPECTOS</h1>
+        <div className="d-flex justify-content-center">
+          <div className="col-12 col-lg-6">
+            <form onSubmit={handleOnSubmit}>
+              <div className="mb-3">
+                <label htmlFor="fullName" className="form-label ">
+                  Nombre Completo
+                </label>
+                <input
+                  type="text"
+                  className="form-control fondo1"
+                  id="fullName"
+                  name="fullName"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="phone" className="form-label">
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  className="form-control fondo1"
+                  id="phone"
+                  name="phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="address" className="form-label">
+                  Dirección
+                </label>
+                <input
+                  type="text"
+                  className="form-control fondo1"
+                  id="address"
+                  name="address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  required
+                />
+              </div>
+              <button type="submit" className="btn btn-primary">
+                Agregar Estudiante
+              </button>
+            </form>
           </div>
-          <div className="mb-3">
-            <label htmlFor="phone" className="form-label">
-              Teléfono
-            </label>
-            <input
-              type="tel"
-              className="form-control"
-              id="phone"
-              name="phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="address" className="form-label">
-              Dirección
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="address"
-              name="address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Agregar Estudiante
-          </button>
-        </form>
+        </div>
         <div className="mt-4">
-          <h2>Lista de Estudiantes</h2>
+          <h2 className="text-logo">Lista de prospectos</h2>
           <table className="table table-dark table-striped text-light ">
             <thead>
               <tr>

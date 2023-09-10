@@ -38,7 +38,7 @@ const authProvider = ({
           await registerNewUser({
             uid: user.uid,
             displayName: user.displayName,
-
+            isAdmin: false,
             profilePicture: "",
             username: "",
             processCompleted: false,

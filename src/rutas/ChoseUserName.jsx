@@ -9,7 +9,7 @@ const ChoseUserName = () => {
   const [currentUser, setCurrentUser] = useState({});
   const [username, setUsername] = useState("");
   function handleUserLoggedIn(user) {
-    navigate("/Mundo-infor/dashBoard");
+    navigate("/Mundo-infor/profile");
   }
   function handleUserNotRegistered(user) {
     setCurrentUser(user);

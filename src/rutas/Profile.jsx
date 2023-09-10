@@ -14,9 +14,10 @@ const Profile = () => {
     const userInfo = await getAdminInfo(user.uid);
     if (userInfo.isAdmin) {
       setIsAdmin(true);
-      setCurrentUser(user);
-      setState(2);
     }
+    setCurrentUser(user);
+    setState(2);
+    navigate("/Mundo-infor/profile");
   }
 
   function handleUserNotRegistered(user) {
