@@ -11,17 +11,12 @@ import Navbar from "./Navbar";
 
 const Registerform = () => {
   const [state, setCurrentState] = useState(0);
-  const [isAdmin, setIsAdmin] = useState(false); // Agrega el estado para determinar si el usuario es administrador
+
   const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        // Obtiene información del usuario y verifica si es administrador
-        const userInfo = await getUserInfo(user.uid);
-        if (userInfo && userInfo.isAdmin) {
-          setIsAdmin(true);
-        }
         checkUserRegistration(user.uid);
       } else {
         setCurrentState(4);
@@ -55,7 +50,7 @@ const Registerform = () => {
   }
 
   function handleUserLoggedIn(user) {
-    navigate("/Mundo-infor/profile/");
+    navigate("/Mundo-infor/editProfile");
   }
 
   function handleUserNotRegistered(user) {
@@ -72,15 +67,12 @@ const Registerform = () => {
       onUserNotRegistered={handleUserNotRegistered}
       onUserNotLoggedIn={handleUserNotLoggedIn}
     >
-      <div className="vh-50">
-        {isAdmin && ( // Muestra el enlace "Admin" solo si el usuario es administrador
-          <Link to="/dashboard">Admin</Link>
-        )}
+      <div className="">
         {state === 4 ? (
           <div className="text-light ">
             <Navbar />
-            <div className="css-selector1 vh-50 d-flex justify-content-center align-items-center">
-              <div className="bg-dark bg-opacity-50 rounded p-4 d-flex justify-content-center align-items-center flex-column">
+            <div className="custom-fondo1 vh-50 d-flex justify-content-center align-items-center">
+              <div className="bg-dark bg-opacity-75 rounded p-4 d-flex justify-content-center align-items-center flex-column">
                 <h1 className="text-light text-logo fs-3">
                   INGRESE CON SU CUENTA{" "}
                 </h1>
@@ -96,7 +88,11 @@ const Registerform = () => {
           </div>
         ) : (
           <div className="text-light vh-50 text-center text display-5 css-selector d-flex justify-content-center align-items-center">
-            Loading...
+            <div className="d-flex justify-content-center">
+              <div className="spinner-border" role="status">
+                <span className="visually-hidden">Cargando...</span>
+              </div>
+            </div>
           </div>
         )}
       </div>

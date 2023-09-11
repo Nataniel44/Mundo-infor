@@ -36,14 +36,17 @@ export default function Main() {
       <div className="text-light">
         <Presentation />
       </div>
-      <section ref={sectionRef}>
+      <section ref={sectionRef}></section>
+      <div className="container  text-logo custom-fondo1">
         <br />
-      </section>
-      <div className="container mt-5 text-logo">
-        <h3 className="text-light text-center display-5">Nuestros Cursos</h3>
+        <br />
+        <br />
+        <h3 className="text-light text-center display-5 text-logo">
+          Nuestros Cursos
+        </h3>
         <div className="row justify-content-center">
           {cursosData.map((curso) => (
-            <div key={curso.id} className="col-12 col-md-4 col-lg-3 mb-4">
+            <div key={curso.id} className="col-9 col-md-4 col-lg-3 mb-4">
               <div className="card shadow border-0">
                 <img
                   src={curso.imageURL}

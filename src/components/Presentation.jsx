@@ -10,7 +10,7 @@ const Presentation = () => {
   return (
     <>
       <div>
-        <div className="jumbotron jumbotron-fluid text-center text-logo rounded fondo2   mb-3 vh-100 d-flex justify-content-center flex-column align-items-center">
+        <div className="jumbotron jumbotron-fluid text-center text-logo rounded fondo2  vh-100 d-flex justify-content-center flex-column align-items-center">
           <h3 className=" text display-4 ">
             INSTITUTO
             <span className="tree-color  text"> Mundo Informática</span>
@@ -22,7 +22,7 @@ const Presentation = () => {
 
           <button
             onClick={handleArrowClick}
-            className="btn btn-outline-primary mb-3"
+            className="btn btn-outline-primary mb-3 btn-custom"
           >
             <span className="text-color">haga click</span> <br /> Explora
             nuestros cursos
@@ -30,7 +30,7 @@ const Presentation = () => {
 
           <RegistroForm />
         </div>
-        <div className="container">
+        <div className="container custom-fondo">
           <div className="row ">
             <div className="col-md-12">
               <div className="mission-section text-center mt-5">
@@ -121,10 +121,7 @@ const Presentation = () => {
 
           <div className="row">
             <div className="col-md-12">
-              <div className="h-25 text-dark" ref={compraSectionRef}>
-                <br />
-                <br />
-              </div>
+              <div className=" text-dark" ref={compraSectionRef}></div>
             </div>
           </div>
         </div>

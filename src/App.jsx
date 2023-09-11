@@ -15,8 +15,9 @@ import EditProfileView from "./rutas/EditProfileView";
 function App() {
   return (
     <>
-      <Routes>
+      <Routes basename="/Mundo-infor/">
         <Route path="/Mundo-infor/" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route
           path="/Mundo-infor/choose-username"
           element={<ChoseUserName />}

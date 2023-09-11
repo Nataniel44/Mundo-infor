@@ -70,31 +70,39 @@ const EditProfileView = () => {
         onUserNotLoggedIn={handleUserNotLoggedIn}
       >
         <div className="text-light vh-50 text-center text display-5 css-selector d-flex justify-content-center align-items-center">
-          Loading...
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Cargando...</span>
+            </div>
+          </div>
         </div>
       </AuthProvider>
     );
   }
   return (
     <Dashboardwrapper admin={isAdmin}>
-      <div className="text-light text-center text-logo vh-50 container">
-        <h2>Editar Perfil</h2>
-        <div className="mt-5 mb-5">
-          <div className="d-flex align-items-center">
-            <img src={profileUrl} alt="" width={100} />
-            <h2>{currentUser.username}</h2>
+      <div className="text-light text-logo custom-fondo1 ">
+        <div className="p-3">
+          <h2 className="text-center">Editar Perfil</h2>
+          <div className="mt-5 mb-5">
+            <div className="d-flex flex-column">
+              <span className="text-primary">Foto de perfil:</span>
+              <img src={profileUrl} alt="" width={100} />
+              <span className="text-primary mt-3">nombre de usuario:</span>
+              <h2>{currentUser.username}</h2>
+            </div>
           </div>
-        </div>
-        <div className="d-flex justify-content-end">
-          <button onClick={handleOpenFilePicker} className="btn btn-light">
-            Cambiar Foto
-          </button>
-          <input
-            ref={fileRef}
-            type="file"
-            className="filenone"
-            onChange={handleChangeFile}
-          />
+          <div className="d-flex justify-content-end">
+            <button onClick={handleOpenFilePicker} className="btn btn-light">
+              Cambiar Foto
+            </button>
+            <input
+              ref={fileRef}
+              type="file"
+              className="filenone"
+              onChange={handleChangeFile}
+            />
+          </div>
         </div>
       </div>
     </Dashboardwrapper>

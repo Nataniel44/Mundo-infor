@@ -4,6 +4,7 @@ import { useState } from "react";
 import { existsUsername, updateUser } from "../firebase";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Dashboardwrapper from "../components/Dashboardwrapper";
 const ChoseUserName = () => {
   const navigate = useNavigate();
   const [state, setState] = useState(0);
@@ -38,54 +39,58 @@ const ChoseUserName = () => {
   }
   if (state === 3 || state === 5) {
     return (
-      <div className="d-flex css-selector1 justify-content-center align-items-center flex-column text-light vh-50 ">
+      <>
         <Navbar />
-        <div className="bg-light text-dark  bg-opacity-75 rounded p-3 d-flex flex-column align-items-center">
-          <form>
-            <div className="mb-3 "></div>
-          </form>
-          <h1 className="text-logo">
-            Bienvenido
-            <span className="text-primary "> {currentUser.displayName} </span>
-          </h1>
-          <p>Para continuar ingrese un nombre de usuario.</p>
-          {state === 5 ? (
-            <p>El nombre de usuario ya existe, escoge otro</p>
-          ) : (
-            ""
-          )}
-          <div>
-            <input
-              type="text"
-              className="form-control mb-3 "
-              onInput={handleInputUsername}
-              placeholder="---Nombre De Usuario---"
-            />
-          </div>
+        <div className="d-flex css-selector1 justify-content-center align-items-center flex-column text-light vh-50 ">
+          <div className="bg-light text-dark  bg-opacity-75 rounded p-3 d-flex flex-column align-items-center">
+            <form>
+              <div className="mb-3 "></div>
+            </form>
+            <h1 className="text-logo">
+              Bienvenido
+              <span className="text-primary "> {currentUser.displayName} </span>
+            </h1>
+            <p>Para continuar ingrese un nombre de usuario.</p>
+            {state === 5 ? (
+              <p>El nombre de usuario ya existe, escoge otro</p>
+            ) : (
+              ""
+            )}
+            <div>
+              <input
+                type="text"
+                className="form-control mb-3 "
+                onInput={handleInputUsername}
+                placeholder="---Nombre De Usuario---"
+              />
+            </div>
 
-          <div>
-            <button className="btn btn-primary" onClick={handleContinue}>
-              Continuar &#8594;
-            </button>
+            <div>
+              <button className="btn btn-primary" onClick={handleContinue}>
+                Continuar &#8594;
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
   if (state === 6) {
     return (
-      <div className="css-selector1 vh-50 d-flex justify-content-center align-items-center">
-        <Navbar />
-        <div className="bg-light text-dark text-logo bg-opacity-75 border border-dark rounded p-4 d-flex justify-content-center align-items-center flex-column">
-          <h2>se registro correctamente.</h2>
-          <Link
-            to="/Mundo-infor/editProfile"
-            className="btn btn btn-outline-primary"
-          >
-            continuar
-          </Link>
+      <>
+        <Dashboardwrapper></Dashboardwrapper>
+        <div className="css-selector1 vh-50 d-flex justify-content-center align-items-center">
+          <div className="bg-light text-dark text-logo bg-opacity-75 border border-dark rounded p-4 d-flex justify-content-center align-items-center flex-column">
+            <h2>se registro correctamente.</h2>
+            <Link
+              to="/Mundo-infor/editProfile"
+              className="btn btn btn-outline-primary"
+            >
+              continuar
+            </Link>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
   return (
@@ -96,7 +101,11 @@ const ChoseUserName = () => {
         onUserNotLoggedIn={handleUserNotLoggedIn}
       >
         <div className="text-light vh-50 text-center text display-5 css-selector d-flex justify-content-center align-items-center">
-          Loading...
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Cargando...</span>
+            </div>
+          </div>
         </div>
       </AuthProvider>
     </>

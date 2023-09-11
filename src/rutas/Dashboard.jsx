@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Dashboardwrapper from "../components/Dashboardwrapper";
 import { v4 as uuidv4 } from "uuid";
 import { insertNewLink, getLinks, getAdminInfo } from "../firebase";
-import Navbar from "../components/Navbar";
+import Link from "../components/Link";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -45,7 +45,11 @@ const Dashboard = () => {
         onUserNotLoggedIn={handleUserNotLoggedIn}
       >
         <div className="text-light vh-50 text-center text display-5 css-selector d-flex justify-content-center align-items-center">
-          Loading...
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Cargando...</span>
+            </div>
+          </div>
         </div>
       </AuthProvider>
     );
@@ -75,7 +79,8 @@ const Dashboard = () => {
       setStudents([...students, newStudent]);
     }
   }
-
+  function handleDeleteStudent() {}
+  function handleUpdateStudent() {}
   return (
     <Dashboardwrapper admin={isAdmin}>
       <div className="bg-darkmode text-light p-3">
@@ -143,11 +148,17 @@ const Dashboard = () => {
             </thead>
             <tbody>
               {students.map((student) => (
-                <tr key={student.id}>
-                  <td>{student.fullName}</td>
-                  <td>{student.phone}</td>
-                  <td>{student.address}</td>
-                </tr>
+                <>
+                  <Link
+                    key={student.docId}
+                    fullname={student.fullName}
+                    phone={student.phone}
+                    address={student.address}
+                    onDelete={handleDeleteStudent}
+                    onUpdate={handleUpdateStudent}
+                  />
+
+                </>
               ))}
             </tbody>
           </table>

@@ -17,7 +17,6 @@ const Profile = () => {
     }
     setCurrentUser(user);
     setState(2);
-    navigate("/Mundo-infor/profile");
   }
 
   function handleUserNotRegistered(user) {
@@ -36,7 +35,11 @@ const Profile = () => {
         onUserNotLoggedIn={handleUserNotLoggedIn}
       >
         <div className="text-light vh-50 text-center text display-5 css-selector d-flex justify-content-center align-items-center">
-          Loading...
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Cargando...</span>
+            </div>
+          </div>
         </div>
       </AuthProvider>
     );

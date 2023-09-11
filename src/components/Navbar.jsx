@@ -10,11 +10,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div className="container-fluid">
           <a className="navbar-brand text" href="#">
             <img
-              src="./img/logo2.png"
+              src="/img/logo2.png"
               className="rounded-circle"
               width="50"
               alt="Mundo Informática"
