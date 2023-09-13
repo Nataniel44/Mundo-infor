@@ -157,7 +157,6 @@ const Dashboard = () => {
                     onDelete={handleDeleteStudent}
                     onUpdate={handleUpdateStudent}
                   />
-
                 </>
               ))}
             </tbody>

@@ -30,8 +30,9 @@ function App() {
 
         <Route path="/Mundo-infor/login" element={<Registerform />} />
         <Route path="/Mundo-infor/dashBoard" element={<Dashboard />} />
-        <Route path="/Mundo-infor/profile" element={<Profile />} />
+        <Route path="/Mundo-infor/My" element={<Profile />} />
         <Route path="/Mundo-infor/editProfile" element={<EditProfileView />} />
+        <Route path="/cursosView/" element={<EditProfileView />} />
       </Routes>
       <Footer />
     </>

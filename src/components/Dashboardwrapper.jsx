@@ -71,8 +71,8 @@ const Dashboardwrapper = ({ children, admin }) => {
             <img
               src={profileUrl}
               className="rounded-circle"
-              width="50"
-              height={50}
+              width={40}
+              height={40}
               alt="Mundo Informática"
             />
             <ul className="ul-1">
@@ -85,7 +85,7 @@ const Dashboardwrapper = ({ children, admin }) => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <span className="text-logo ">{currentUser.username}</span>
+                  <span className="font ">{currentUser.username}</span>
                 </a>
                 <ul
                   className="dropdown-menu dropdown-menu-dark "
@@ -117,17 +117,19 @@ const Dashboardwrapper = ({ children, admin }) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div
-            className={`collapse navbar-collapse ${collapsed ? "show" : ""}`}
+            className={`justify-content-end collapse navbar-collapse ${
+              collapsed ? "show" : ""
+            }`}
             id="navbarNavAltMarkup"
           >
-            <div className="navbar-nav text-logo">
+            <div className="navbar-nav">
               {/* Solo muestra el enlace de administrador si isAdmin es true */}
               {admin && (
                 <Link to={"/Mundo-infor/dashBoard"} className="nav-link active">
                   Prospectos
                 </Link>
               )}
-              <Link to={"/Mundo-infor/profile"} className="nav-link active">
+              <Link to={"/Mundo-infor/My"} className="nav-link active">
                 cursos
               </Link>
 

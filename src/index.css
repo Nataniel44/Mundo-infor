@@ -231,13 +231,13 @@ body {
 
 /* Estilos para el pulgar (scroll thumb) */
 ::-webkit-scrollbar-thumb {
-  background: #2c46ce; /* Color del pulgar */
+  background: #6e6e6e; /* Color del pulgar */
   border-radius: 6px; /* Bordes redondeados del pulgar */
 }
 
 /* Estilos para el pulgar al pasar el mouse */
 ::-webkit-scrollbar-thumb:hover {
-  background: #3145a7; /* Color del pulgar al pasar el mouse */
+  background: #3a3a3a; /* Color del pulgar al pasar el mouse */
 }
 
 .whatsapp-icon {
@@ -255,7 +255,9 @@ body {
   cursor: pointer;
   z-index: 1000;
 }
-
+.font {
+  font-family: "Karla", sans-serif;
+}
 .filenone {
   display: none;
 }
