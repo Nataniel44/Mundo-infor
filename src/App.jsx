@@ -12,16 +12,24 @@ import ChoseUserName from "./rutas/ChoseUserName";
 import Dashboard from "./rutas/Dashboard";
 import Profile from "./rutas/Profile";
 import EditProfileView from "./rutas/EditProfileView";
+import Cursos from "./components/Cursos";
+
+import Registro from "./components/Registro";
+import Cursosview from "./rutas/Cursosview";
+import AñadirCurso from "./components/AñadirCurso";
 function App() {
   return (
     <>
-      <Routes basename="/Mundo-infor/">
+      <Routes basename="/">
         <Route path="/Mundo-infor/" element={<Main />} />
         <Route path="/" element={<Main />} />
         <Route
           path="/Mundo-infor/choose-username"
           element={<ChoseUserName />}
         />
+        <Route path="/Mundo-infor/cursos/" element={<Cursos />} />
+
+        <Route path="/cursosView/:id" element={<Cursosview />} />
 
         <Route
           path="/Mundo-infor/curso/:id"
@@ -29,10 +37,13 @@ function App() {
         />
 
         <Route path="/Mundo-infor/login" element={<Registerform />} />
+        <Route path="/Mundo-infor/inscribirMe" element={<Registro />} />
         <Route path="/Mundo-infor/dashBoard" element={<Dashboard />} />
-        <Route path="/Mundo-infor/My" element={<Profile />} />
+        <Route path="/My" element={<Profile />} />
         <Route path="/Mundo-infor/editProfile" element={<EditProfileView />} />
-        <Route path="/cursosView/" element={<EditProfileView />} />
+        <Route path="/cursosView/" element={<Cursosview />} />
+        <Route path="/cursosEdit/" element={<AñadirCurso />} />
+        <Route path="/Mundo-infor/admin" element={<AñadirCurso />} />
       </Routes>
       <Footer />
     </>

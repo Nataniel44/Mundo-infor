@@ -5,6 +5,47 @@
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+.fle {
+  font-size: 50px;
+  height: 50px;
+}
+.pos {
+  position: absolute;
+  top: 80px;
+  right: 160px;
+}
+/* Estilo para los cuadros */
+.single-section.onetopic {
+  padding: 8px;
+  color: #9e69c5;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los títulos de los cuadros */
+.single-section.onetopic h3.sectionname {
+  font-size: 18px;
+  color: #333;
+  margin-top: 0;
+}
+
+/* Estilo para los enlaces dentro de los cuadros */
+.single-section.onetopic a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Estilo para los enlaces activos */
+.single-section.onetopic a.nav-link.active {
+  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Estilo para los enlaces no activos */
+.single-section.onetopic a.nav-link {
+  color: #007bff;
+}
 
 .ul-1 {
   display: flex;
@@ -15,4 +56,178 @@
 }
 .btn-custom {
   background-color: #100e0f;
+}
+body {
+}
+/* En el archivo CSS o CSS en módulos */
+.cursos-container {
+  max-height: 50vh; /* Ajusta la altura máxima según tus necesidades */
+  overflow-y: auto; /* Habilita el desplazamiento vertical cuando el contenido excede la altura máxima */
+}
+/* En el archivo CSS o CSS en módulos */
+.cursos-container1 {
+  position: relative;
+  margin-bottom: 25px;
+}
+.second-color1 {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 71px,
+    #6643b5 71px,
+    #6643b5 142px
+  );
+  background-color: #6d4bbc;
+}
+.header1 {
+  background: linear-gradient(150deg, #8f40da, #713ece 50%);
+  margin-bottom: -70px;
+}
+.arrow-down1 {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 10px;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 20px solid #6d4bbc; /* Mismo color que el fondo */
+  content: ""; /* Necesario para generar el contenido pseudo-elemento */
+}
+.bg-boca {
+  background: linear-gradient(360deg, #2980b9, #f1c40f 100vh);
+}
+/* En el archivo PromotionBanner.css */
+.promotion-banner {
+  width: 100%;
+  background-color: #333; /* Color de fondo del banner */
+  color: white; /* Color de texto del banner */
+}
+/* En tu archivo CSS o CSS en módulos */
+.card-content {
+  transition: transform 0.3s ease; /* Transición suave para el efecto de escala */
+}
+
+.card-content:hover {
+  background-color: #555; /* Cambia el color de fondo en hover */
+  color: #fff; /* Cambia el color del texto en hover */
+  transform: scale(1.05); /* Aumenta el tamaño de la tarjeta en hover */
+}
+.text-color-quinto {
+  color: #9e69c5;
+}
+.animated-text {
+  font-size: 15px; /* Tamaño de fuente del texto */
+  padding-left: 10px; /* Espacio desde el borde izquierdo del banner */
+  white-space: nowrap; /* Evita el desbordamiento de texto en varias líneas */
+}
+
+/* Estilos adicionales según tus preferencias */
+/* En App.css */
+.fade-enter {
+  opacity: 0;
+}
+.rounded-5 {
+  border-radius: 15px;
+}
+.vh-max {
+  height: 86vh;
+  background-image: url("/public/imi.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.border1 {
+  border-bottom-left-radius: 35px;
+  border-top-left-radius: 35px;
+  padding: 20px;
+}
+.p-6 {
+  padding: 20px;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.borde-personalizado {
+  border: solid 2px;
+  border-bottom: solid 2px;
+  border-left: solid 10px;
+  border-top: solid 2px;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-color: #9e69c5; /* Cambia esto al color que desees */
+  background-color: #fbfbfb;
+}
+.z-max {
+  z-index: 999;
+}
+.z-min {
+  z-index: 1;
+}
+
+.borde-pers {
+  border: solid 2px;
+  border-bottom: solid 2px;
+  border-right: solid 10px;
+  border-top: solid 2px;
+
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-color: #9e69c5; /* Cambia esto al color que desees */
+  background-color: #fbfbfb;
+}
+.borde {
+  border: solid 2px;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-left: solid 2px;
+  border-right: solid 2px;
+  border-top: solid 2px;
+  border-bottom: solid 5px;
+
+  border-color: #000000; /* Cambia esto al color que desees */
+  background-color: #fbfbfb;
+}
+.borde-personalizado1 {
+  border: solid 1px;
+  border-bottom: solid 5px;
+  border-color: #9e69c5; /* Cambia esto al color que desees */
+  background-color: #fbfbfb;
+}
+.borde-personalizado2 {
+  border: solid 1px;
+  border-right: solid 2px;
+  border-bottom: solid 5px;
+  border-color: #000000; /* Cambia esto al color que desees */
+  background-color: #fbfbfb;
+}
+.borde-personalizado3 {
+  border: solid 1px;
+  border-right: solid 3px;
+  border-bottom: solid 4px;
+  border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-color: #000000; /* Cambia esto al color que desees */
+  background-color: #fbfbfb;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+.scrolled {
+  display: none;
+}
+.scrolled1 {
+  display: block;
 }

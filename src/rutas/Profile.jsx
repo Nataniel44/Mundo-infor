@@ -1,4 +1,3 @@
-import React from "react";
 import Dashboardwrapper from "../components/Dashboardwrapper";
 import { useState } from "react";
 import AuthProvider from "../components/AuthProvider";
@@ -11,15 +10,12 @@ const Profile = () => {
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState({});
   const [state, setState] = useState(0);
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [curso, setCurso] = useState(0);
+
+  const [curso, setCurso] = useState();
 
   async function handleUserLoggedIn(user) {
     const userInfo = await getAdminInfo(user.uid);
 
-    if (userInfo.isAdmin) {
-      setIsAdmin(true);
-    }
     if (userInfo.currentCurso !== 0) {
       setCurso(userInfo.currentCurso);
     }
@@ -41,24 +37,72 @@ const Profile = () => {
       const cursoSeleccionado = cursosData.find(
         (cursoItem) => cursoItem.id === curso
       );
+
       return cursoSeleccionado ? (
-        <div
-          key={cursoSeleccionado.id}
-          className="border border-2  p-2 align-items-center text-secondary"
-        >
-          <Link
-            to={"/cursosView/"}
-            className="d-flex align-items-center nav-link active p-0"
-          >
-            <img
-              width={100}
-              src={cursoSeleccionado.imageURL}
-              alt={cursoSeleccionado.title}
-              className="me-2"
-            />
-            <h3 className="font text-dark">{cursoSeleccionado.title}</h3>
-          </Link>
-        </div>
+        <>
+          <div className="col-12 col-lg-7 p-3 borde-personalizado mt-3 ">
+            <h2 className="font m-0 ">Mis cursos</h2>
+            <div
+              key={cursoSeleccionado.id}
+              className="borde  p-2 align-items-center text-secondary mb-5 mt-3"
+            >
+              <Link
+                to={"/cursosView/"}
+                className="d-flex align-items-center nav-link active p-0 justify-content-center"
+              >
+                <div className="row d-flex align-items-center justify-content-center">
+                  <div className="col-12 col-md-3 col-lg-3 d-flex justify-content-center align-content-center ">
+                    <img
+                      width={100}
+                      src={cursoSeleccionado.imageURL}
+                      alt={cursoSeleccionado.title}
+                      className="img-fluid"
+                    />
+                  </div>
+                  <div className="col-12 col-md-9 col-lg-9 d-flex align-items-center justify-content-center">
+                    <h3 className="font text-dark text-center">
+                      {cursoSeleccionado.title}
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+          <div className="borde-pers col-12 col-lg-4 bg-light  mt-3 ps-4 pe-3">
+            <div className="">
+              <h2 className="font">Línea del progreso</h2>
+              <hr />
+
+              <div className="d-flex flex-column justify-content-center">
+                <h4 className="font">{cursoSeleccionado.title}</h4>
+                <div
+                  className="progress"
+                  role="progressbar"
+                  aria-label="Basic example"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div className="progress-bar" style={{ width: "50%" }}>
+                    50%
+                  </div>
+                </div>
+              </div>
+              <hr />
+            </div>
+          </div>
+          {currentUser.isAdmin && (
+            <div className="d-flex justify-content-center">
+              <div className="bg-light borde p-3 text-center">
+                <h3 className="font display-5">Panel admin</h3>
+
+                <Link to={"/Mundo-infor/admin"} className="btn btn-dark">
+                  Entrar
+                </Link>
+              </div>
+            </div>
+          )}
+        </>
       ) : (
         <div className="border border-2 d-flex p-2 align-items-center text-secondary">
           No se encontró el curso correspondiente
@@ -81,7 +125,8 @@ const Profile = () => {
         onUserNotLoggedIn={handleUserNotLoggedIn}
       >
         <div className="text-light vh-50 text-center text display-5 css-selector d-flex justify-content-center align-items-center">
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center gap-3 ">
+            Cargando
             <div className="spinner-border" role="status">
               <span className="visually-hidden">Cargando...</span>
             </div>
@@ -92,22 +137,11 @@ const Profile = () => {
   }
 
   return (
-    <Dashboardwrapper admin={isAdmin}>
-      <div className="text-dark">
-        <article className="bg-light vh-50 ps-4 pe-4">
-          <section className="row p-3 justify-content-around">
-            <div className="col-12 col-lg-7 bg-light p-2 border border-1 mt-3">
-              <h2 className="font m-0  ">Mis cursos</h2>
-              {obtenerCurso()}
-            </div>
-
-            <div className="col-12 col-lg-4 bg-light p-2 border border-1 mt-3">
-              <div className="">
-                <h2 className="font">Línea del tiempo</h2>
-              </div>
-            </div>
-          </section>
-        </article>
+    <Dashboardwrapper>
+      <div className=" container">
+        <section className="row justify-content-center gap-3 p-3 pt-0  ">
+          {obtenerCurso()}
+        </section>
       </div>
     </Dashboardwrapper>
   );

@@ -9,11 +9,11 @@ import { signOut } from "firebase/auth";
 import { auth } from "/src/firebase";
 import { useNavigate } from "react-router-dom"; // Asegúrate de importar useNavigate si estás usando react-router-dom.
 
-const Dashboardwrapper = ({ children, admin }) => {
+const Dashboardwrapper = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   const navigate = useNavigate();
-
+  const [isAdmin, setIsAdmin] = useState(false);
   const [state, setState] = useState(0);
   const [currentUser, setCurrentUser] = useState({});
   const [profileUrl, setProfileUrl] = useState({});
@@ -34,6 +34,9 @@ const Dashboardwrapper = ({ children, admin }) => {
 
   async function handleUserLoggedIn(user) {
     setCurrentUser(user);
+    if (user.isAdmin) {
+      setIsAdmin(true);
+    }
     const url = await getProfilePhotoUrl(user.profilePicture);
     if (url === undefined) {
       setProfileUrl("/img/logo2.png");
@@ -53,8 +56,9 @@ const Dashboardwrapper = ({ children, admin }) => {
         onUserNotRegistered={handleUserNotRegistered}
         onUserNotLoggedIn={handleUserNotLoggedIn}
       >
-        <div className="text-light text-center text display-5 css-selector d-flex justify-content-center align-items-center">
-          <div className="d-flex justify-content-center">
+        <div className="text-light  vh-50 text-center text display-5 css-selector d-flex justify-content-center align-items-center">
+          <div className="d-flex justify-content-center gap-3">
+            Cargando
             <div className="spinner-border" role="status">
               <span className="visually-hidden">Cargando...</span>
             </div>
@@ -63,11 +67,14 @@ const Dashboardwrapper = ({ children, admin }) => {
       </AuthProvider>
     );
   }
+  function toMy() {
+    navigate("My");
+  }
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <div className="container-fluid">
-          <a className="navbar-brand d-flex justify-content-center align-items-center">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top rounded-top rounded-bottom shadow z-max">
+        <div className="container-fluid container-md">
+          <a className="navbar-brand d-flex justify-content-center align-items-center gap-2">
             <img
               src={profileUrl}
               className="rounded-circle"
@@ -78,26 +85,26 @@ const Dashboardwrapper = ({ children, admin }) => {
             <ul className="ul-1">
               <li className="nav-item dropdown">
                 <a
-                  className="nav-link dropdown-toggle text-secondary"
+                  className="nav-link dropdown-toggle text-dark"
                   href="#"
                   id="navbarDarkDropdownMenuLink"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <span className="font ">{currentUser.username}</span>
+                  <span className="text-color">{currentUser.username}</span>
                 </a>
                 <ul
                   className="dropdown-menu dropdown-menu-dark "
                   aria-labelledby="navbarDarkDropdownMenuLink"
                 >
                   <li>
-                    <Link
-                      to={"/Mundo-infor/editProfile"}
+                    <a
+                      href={"/Mundo-infor/editProfile"}
                       className="dropdown-item"
                     >
                       Editar Perfil
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </li>
@@ -124,14 +131,15 @@ const Dashboardwrapper = ({ children, admin }) => {
           >
             <div className="navbar-nav">
               {/* Solo muestra el enlace de administrador si isAdmin es true */}
-              {admin && (
+              {isAdmin && (
                 <Link to={"/Mundo-infor/dashBoard"} className="nav-link active">
                   Prospectos
                 </Link>
               )}
-              <Link to={"/Mundo-infor/My"} className="nav-link active">
-                cursos
-              </Link>
+
+              <a href="/My" className="nav-link active">
+                Inicio
+              </a>
 
               <a onClick={handleSignOut} className="nav-link active ">
                 <button className="btn nav-link active p-0 text-danger border-0">
@@ -142,7 +150,8 @@ const Dashboardwrapper = ({ children, admin }) => {
           </div>
         </div>
       </nav>
-      <div>{children}</div>
+
+      <div className="w-100">{children}</div>
     </div>
   );
 };

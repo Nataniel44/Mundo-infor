@@ -14,7 +14,7 @@
   font-family: "Phudu", cursive;
 }
 body {
-  background: #222;
+  background: #e6e6e6;
 }
 .bg-darkmode {
   background-color: #222;
@@ -35,6 +35,9 @@ body {
 .color-tarjeta {
   background-color: #e1c25d;
 }
+.color-tarjeta1 {
+  background-color: #3768e4;
+}
 .text-color {
   color: #6643b5;
 }
@@ -50,8 +53,24 @@ body {
 .lh-0 {
   line-height: 70px;
 }
+.p {
+  padding-right: 150px;
+}
+.p-auto {
+  padding-right: 182.73px;
+}
 .fondo2 {
-  background-image: url("/public/img/22.jpg");
+  background: linear-gradient(135deg, #0000 18.75%, #3c408e 0 31.25%, #0000 0),
+    repeating-linear-gradient(45deg, #3c408e -6.25% 6.25%, #4446cf 0 18.75%);
+  background-size: 98px 98px;
+}
+.fondo3 {
+  background-image: radial-gradient(#4446cf 3.5px, transparent 3.5px);
+  background-size: 41px 41px;
+  background-color: #3c408e;
+}
+.back {
+  background-image: url("/img/22.jpg");
   background-size: cover;
 }
 .color-form {
@@ -112,6 +131,33 @@ body {
   float: left;
 }
 
+
+
+
+
+/* Estilos para el carrusel */
+#carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#carousel {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+.carousel-item {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
 /* Estilos adicionales para el cuadrado si es necesario */
 .background-square {
   /* Agrega estilos adicionales según tus preferencias */
@@ -121,6 +167,16 @@ body {
     width: 75%;
     height: 30%;
   }
+  .disp-none {
+    display: none;
+  }
+  .bar {
+    height: 167px;
+  }
+}
+/* Agrega este CSS personalizado para cambiar la velocidad de la transición */
+.carousel-inner {
+  transition: transform 0.5s ease-in-out;
 }
 
 .css-selector {

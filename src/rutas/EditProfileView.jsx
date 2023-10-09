@@ -81,27 +81,39 @@ const EditProfileView = () => {
   }
   return (
     <Dashboardwrapper admin={isAdmin}>
-      <div className="text-light text-logo custom-fondo1 ">
-        <div className="p-3">
-          <h2 className="text-center">Editar Perfil</h2>
-          <div className="mt-5 mb-5">
-            <div className="d-flex flex-column">
-              <span className="text-primary">Foto de perfil:</span>
-              <img src={profileUrl} alt="" width={100} />
-              <span className="text-primary mt-3">nombre de usuario:</span>
-              <h2>{currentUser.username}</h2>
+      <div className="bg-light">
+        <div className="text-dark   container p-3  mb-3 mt-3">
+          <div className="mt-1 d-flex flex-column align-items-center   ">
+            <h2 className="text-center text m-0">Editar Perfil</h2>
+            <label htmlFor="profile-image" className="text-primary fs-5">
+              Foto de perfil:
+            </label>
+            <div className="d-flex align-items-center gap-3 m-3 ">
+              <img
+                src={profileUrl}
+                className="rounded-top  borde-personalizado3 "
+                alt="Foto de perfil"
+                width={100}
+                height={100}
+              />
+              <button
+                onClick={handleOpenFilePicker}
+                className="btn btn-primary ml-3"
+              >
+                Cambiar Foto
+              </button>
+              <input
+                ref={fileRef}
+                type="file"
+                id="profile-image"
+                className="d-none"
+                onChange={handleChangeFile}
+              />
             </div>
-          </div>
-          <div className="d-flex justify-content-end">
-            <button onClick={handleOpenFilePicker} className="btn btn-light">
-              Cambiar Foto
-            </button>
-            <input
-              ref={fileRef}
-              type="file"
-              className="filenone"
-              onChange={handleChangeFile}
-            />
+            <div className="d-flex align-items-center justify-content-center flex-column m-2">
+              <span className="text-primary  fs-5">Nombre de usuario:</span>
+              <h2 className="font">{currentUser.username}</h2>
+            </div>
           </div>
         </div>
       </div>

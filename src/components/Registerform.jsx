@@ -50,7 +50,7 @@ const Registerform = () => {
   }
 
   function handleUserLoggedIn(user) {
-    navigate("/Mundo-infor/editProfile");
+    navigate("/My");
   }
 
   function handleUserNotRegistered(user) {

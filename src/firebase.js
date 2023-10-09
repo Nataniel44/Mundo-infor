@@ -10,6 +10,7 @@ import {
   where,
   setDoc,
   deleteDoc,
+  updateDoc,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -102,6 +103,7 @@ export async function getUserInfo(uid) {
   }
 }
 export { db }; // Exporta la instancia de Firestore
+
 export async function insertNewLink(link) {
   try {
     const docRef = collection(db, "link");
@@ -111,6 +113,7 @@ export async function insertNewLink(link) {
     console.log(error);
   }
 }
+
 export async function getLinks(uid) {
   const links = [];
   try {
@@ -146,3 +149,40 @@ export async function getProfilePhotoUrl(profilePicture) {
     console.error(error);
   }
 }
+export async function getVideoUrl(videoPath) {
+  try {
+    const videoRef = ref(storage, videoPath);
+    const url = await getDownloadURL(videoRef);
+    return url;
+  } catch (error) {
+    console.error("Error al obtener la URL del video:", error);
+    throw error; // Puedes lanzar una excepción para manejar el error en otro lugar si es necesario
+  }
+}
+
+export const obtenerCursosDeFirestore = async () => {
+  try {
+    const cursosCollection = collection(db, "cursos"); // Reemplaza 'cursos' con el nombre de tu colección en Firestore.
+    const cursosSnapshot = await getDocs(cursosCollection);
+    const cursosData = cursosSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    return cursosData;
+  } catch (error) {
+    console.error("Error al obtener los cursos: ", error);
+    return [];
+  }
+};
+
+export const actualizarCursoEnFirestore = async (cursoId, nuevosDatosCurso) => {
+  try {
+    const cursoDocRef = doc(db, "cursos", cursoId); // Reemplaza 'cursos' con el nombre de tu colección en Firestore.
+
+    await updateDoc(cursoDocRef, nuevosDatosCurso);
+
+    console.log("Curso actualizado con éxito.");
+  } catch (error) {
+    console.error("Error al actualizar el curso: ", error);
+  }
+};
